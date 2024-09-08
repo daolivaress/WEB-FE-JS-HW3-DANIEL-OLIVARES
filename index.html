@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<!-- colors: #1a1a1a #0d0d0d #212121 #171717 #404040 #0b0b0b -->
+
+<body class="bg-[#0d0d0d] text-white ">
+    <header class="bg-[#040404] rounded-full px-12 py-3 sticky top-3 w-4/5 mx-auto">
+        <nav class="flex justify-around items-center">
+            <div class="w-10">
+                <a href="#javascript"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png"
+                        alt="js-logo"></a>
+            </div>
+            <ul class="flex list-none gap-12">
+                <li
+                    class="rounded-full transition-all duration-400 hover:text-yellow-300 hover:font-semibold hover:bg-[#212121] hover:px-8 hover:py-2 relative">
+                    <a href="#js-async">JS Async</a>
+                </li>
+                <li
+                    class="rounded-full transition-all duration-400 hover:text-yellow-300 hover:font-semibold hover:bg-[#212121] hover:px-8 hover:py-2 relative">
+                    <a href="#callback">Callback</a>
+                </li>
+                <li
+                    class="rounded-full transition-all duration-400 hover:text-yellow-300 hover:font-semibold hover:bg-[#212121] hover:px-8 hover:py-2 relative">
+                    <a href="#promise">Promise</a>
+                </li>
+                <li
+                    class="rounded-full transition-all duration-400 hover:text-yellow-300 hover:font-semibold hover:bg-[#212121] hover:px-8 hover:py-2 relative">
+                    <a href="#async-await">Async/Await</a>
+                </li>
+                <li
+                    class="rounded-full transition-all duration-400 hover:text-yellow-300 hover:font-semibold hover:bg-[#212121] hover:px-8 hover:py-2 relative">
+                    <a href="#event-loop">Event Loop</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <main class="flex flex-col gap-10">
+        <section id="javascript" class="py-16">
+            <article class="w-2/3 flex gap-12 items-center mx-auto p-8">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png"
+                        alt="js-logo">
+                </div>
+                <div class="border p-10 rounded-xl">
+                    <h1 class="font-bold text-3xl my-4">What is Javascript?</h1>
+                    <p class="mb-2">
+                        JavaScript is a high-level, interpreted, object-oriented programming language,
+                        primarily used in web development, intended to add interaction potential and
+                        dynamism to web pages.
+                    </p>
+                    <p>
+                        It provides a wide range of functionality, such as DOM (Document Object Model) manipulation to
+                        interact with elements of a web page, event handling, communication with servers
+                        via AJAX, creating animations, form validation, and much more.
+                        <b class="transition-all hover:text-yellow-300">
+                            It is a flexible and dynamic language that
+                            allows developers to create interactive, content-rich
+                            experiences.
+                        </b>
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section id="js-async" class="bg-[#171717] py-16">
+            <article class="w-2/3 flex flex-col mx-auto ">
+                <div class="my-4">
+                    <h1 class="font-bold text-3xl my-4">What is Javascript Asynchronous?</h1>
+                    <p>
+                        In JavaScript, <code class="bg-[#404040] px-1.5 py-0.5 rounded">async</code> simplifies handling
+                        asynchronous operations by allowing the use of
+                        await within asynchronous functions, making it easier to wait for promises to resolve without
+                        needing to chain multiple <code class="bg-[#404040] px-1.5 py-0.5 rounded">.then()</code> blocks
+                        together. This improves code readability and
+                        prevents "callback hell", allowing asynchronous code to resemble synchronous code and be easier
+                        to
+                        follow. It also facilitates error handling via <code
+                            class="bg-[#404040] px-1.5 py-0.5 rounded">try</code> and <code
+                            class="bg-[#404040] px-1.5 py-0.5 rounded">catch</code>, making
+                        exception handling in the asynchronous flow more straightforward and manageable.
+                    </p>
+                </div>
+                <pre class="bg-[#0b0b0b] rounded-lg my-4 overflow-x-auto">
+                    <code>
+                        <span class="text-[#404040]">// Asynchronous function that returns a message</span>
+                        <span class="text-purple-400">async</span> <span class="text-purple-300">function</span> <span class="text-blue-300">sayHello<span class="text-cyan-400">()</span></span> {
+                            return <span class="text-green-300">'¡Hello, World!'</span>;
+                        }
+
+                        <span class="text-[#404040]">// Function that uses await to wait for the result of "sayHello"</span>
+                        <span class="text-purple-400">async</span> <span class="text-purple-300">function</span> <span class="text-blue-300">greet<span class="text-cyan-400">()</span></span> {
+                            <span class="text-purple-400">const</span> <span class="text-purple-300">message</span> = <span class="text-purple-300">await</span> <span class="text-blue-300">sayHello()</span>; <span class="text-[#404040]">// We wait for "sayHello" to finish</span>
+                            console<span class="text-blue-300">.log</span><span class="text-cyan-400">(</span>message<span class="text-cyan-400">)</span>; <span class="text-[#404040]">// We print the message</span>
+                        }
+
+                        <span class="text-[#404040]">// We call the asynchronous function</span>
+                        <span class="text-blue-300">greet<span class="text-cyan-400">()</span></span>;
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section id="callback" class="py-16">
+            <article class="w-2/3 flex flex-col mx-auto">
+                <h1 class="font-bold text-3xl my-4">What is Callback?</h1>
+                <p class="mb-4">
+                    A <b>callback function</b> is one that is passed as an argument to another function to be "called
+                    back" at
+                    a later time. A function that accepts other functions as arguments is called a <b>High-Order
+                        function</b>,
+                    and contains the logic to determine when the callback function is executed. It is the combination of
+                    these two that allows us to extend our functionality.
+                </p>
+                <pre class="bg-black rounded-lg my-4 overflow-x-auto">
+                    <code>
+                        <span class="text-purple-400">function</span> <span class="text-blue-300">createQuote</span>(<span class="text-purple-300">quote</span>, <span class="text-purple-300">callback</span>) {
+                            <span class="text-purple-400">let</span> <span class="text-purple-300">myQuote</span> = <span class="text-green-300">"As I always say, "</span> + <span class="text-purple-300">quote</span>;
+                            <span class="text-purple-300">callback</span>(<span class="text-purple-300">myQuote</span>); <span class="text-[#404040]">// 2</span>
+                        }
+                        
+                        <span class="text-purple-400">function</span> <span class="text-blue-300">logQuote</span>(<span class="text-purple-300">quote</span>) {
+                            <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-purple-300">quote</span>);
+                        }
+                        
+                        <span class="text-blue-300">createQuote</span>(<span class="text-green-300">"Eat your vegetables!"</span>, <span class="text-blue-300">logQuote</span>); <span class="text-[#404040]">// 1</span>
+                        
+                        <span class="text-[#404040]">// Output to console:</span>
+                        <span class="text-[#404040]">// As I always say, eat your vegetables!</span>
+                    </code>
+                </pre>
+
+            </article>
+        </section>
+        <section id="promise" class="bg-[#171717] py-16">
+            <article class="w-2/3 flex flex-col mx-auto">
+                <h1 class="font-bold text-3xl my-4">What is Promise?</h1>
+                <p class="mb-4">
+                    A Promise (<code class="bg-[#404040] px-1.5 py-0.5 rounded">Promise</code>) is a proxy for a value
+                    that is not necessarily known when the promise is created. It allows you to associate handlers with
+                    the eventual success value or failure reason of an asynchronous action. This allows asynchronous
+                    methods to return values ​​like synchronous methods: instead of immediately returning the final
+                    value, the asynchronous method returns a promise to provide the value at some point in the future.
+                </p>
+                <p class="mb-4">
+                    A <code class="bg-[#404040] px-1.5 py-0.5 rounded">Promise</code> is in one of these states:
+                </p>
+                <ul class="list-disc mb-4 ml-10">
+                    <li>pending - Initial state, neither fulfilled nor rejected.</li>
+                    <li>fulfilled - Meaning the operation completed successfully.</li>
+                    <li>rejected - Meaning the operation failed.</li>
+                </ul>
+                <p class="mb-4">
+                    A pending promise can be fulfilled with a value or rejected with a reason (error). When either of
+                    these occurs, the associated handlers queued by the <code
+                        class="bg-[#404040] px-1.5 py-0.5 rounded">then</code> method of a promise are called. If the
+                    promise has already been fulfilled or rejected when a corresponding handler is attached, the handler
+                    will be called, so there is no race condition between the completion of an asynchronous operation
+                    and the attachment of its handlers.
+                </p>
+                <pre class="bg-[#0b0b0b] rounded-lg my-4 overflow-x-auto">
+                    <code>
+                        <span class="text-[#404040]">// Function that returns a promise</span>
+                        <span class="text-purple-400">function</span> <span class="text-blue-300">checkEvenNumber</span>(<span class="text-purple-300">number</span>) {
+                            <span class="text-purple-400">return</span> <span class="text-purple-300">new Promise</span>((<span class="text-purple-300">resolve</span>, <span class="text-purple-300">reject</span>) => {
+                                <span class="text-purple-400">setTimeout</span>(() => {
+                                    <span class="text-purple-300">if</span> (<span class="text-blue-300">number</span> % <span class="text-blue-300">2</span> === <span class="text-blue-300">0</span>) {
+                                        <span class="text-purple-300">resolve</span>(<span class="text-green-300">'The number is even.'</span>);
+                                    } <span class="text-purple-300">else</span> {
+                                        <span class="text-purple-300">reject</span>(<span class="text-red-300">'The number is odd.'</span>);
+                                    }
+                                }, <span class="text-blue-300">2000</span>); <span class="text-[#404040]">// Wait for 2 seconds</span>
+                            });
+                        }
+                
+                        <span class="text-[#404040]">// Using the promise</span>
+                        <span class="text-blue-300">checkEvenNumber</span>(<span class="text-blue-300">4</span>)
+                            <span class="text-purple-300">.then</span>(<span class="text-purple-300">(result</span> => {
+                                <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-green-300">result</span>); <span class="text-[#404040]">// If the number is even, prints "The number is even."</span>
+                                <span class="text-purple-400">return</span> <span class="text-green-300">'Next operation after checking.'</span>;
+                            })
+                            <span class="text-purple-300">.then</span>(<span class="text-purple-300">next</span> => <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-green-300">next</span>)) <span class="text-[#404040]">// Prints "Next operation after checking."</span>
+                            <span class="text-purple-300">.catch</span>(<span class="text-purple-300">error</span> => <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-red-300">error</span>)); <span class="text-[#404040]">// If the number is odd, prints "The number is odd."</span>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section id="async-await" class="py-16">
+            <article class="w-2/3 flex flex-col mx-auto">
+                <h1 class="font-bold text-3xl my-4">What is Async/Await?</h1>
+                <p class="mb-4">
+                    <b>Async/Await</b> is a feature in JavaScript that simplifies asynchronous programming by allowing
+                    you
+                    to write asynchronous code that looks and behaves like synchronous code. An <code
+                        class="bg-[#404040] px-1.5 py-0.5 rounded">async</code> function always
+                    returns a Promise, and within this function, the <code
+                        class="bg-[#404040] px-1.5 py-0.5 rounded">await</code> keyword can be used to pause execution
+                    until a Promise is resolved or rejected. This makes asynchronous code easier to read and manage, as
+                    it eliminates the need for complex Promise chaining and simplifies error handling with <code
+                        class="bg-[#404040] px-1.5 py-0.5 rounded">try/catch</code> blocks.
+                </p>
+                <pre class="bg-black rounded-lg my-4 overflow-x-auto">
+                    <code>
+                        <span class="text-[#404040]">// Async function to fetch data from an API</span>
+                        <span class="text-purple-400">async</span> <span class="text-purple-300">function</span> <span class="text-blue-300">fetchData</span>() {
+                            <span class="text-purple-400">const</span> <span class="text-purple-300">url</span> = <span class="text-green-300">'https://jsonplaceholder.typicode.com/posts'</span>; <span class="text-[#404040]">// API URL</span>
+                
+                            <span class="text-purple-400">try</span> {
+                                <span class="text-purple-300">let</span> <span class="text-purple-300">response</span> = <span class="text-purple-300">await</span> <span class="text-blue-300">fetch</span>(<span class="text-green-300">url</span>);
+                
+                                <span class="text-purple-300">if</span> (<span class="text-blue-300">!response.ok</span>) {
+                                    <span class="text-purple-300">throw</span> <span class="text-purple-300">new Error</span>(<span class="text-red-300">'Network response was not ok'</span>);
+                                }
+                
+                                <span class="text-purple-300">let</span> <span class="text-purple-300">data</span> = <span class="text-purple-300">await</span> <span class="text-blue-300">response.json</span>();
+                
+                                <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-green-300">'Data received:', data</span>);
+                            } <span class="text-purple-400">catch</span> (<span class="text-purple-300">error</span>) {
+                                <span class="text-blue-300">console</span>.<span class="text-blue-300">error</span>(<span class="text-red-300">'There was a problem with the request:', error</span>);
+                            }
+                        }
+                
+                        <span class="text-[#404040]">// Call the async function</span>
+                        <span class="text-blue-300">fetchData</span>();
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section id="event-loop" class="bg-[#171717] py-16">
+            <article class="w-2/3 flex flex-col mx-auto">
+                <h1 class="font-bold text-3xl my-4">What is Event Loop?</h1>
+                <p>
+                    The <b>Event Loop</b> is a fundamental part of JavaScript's concurrency model, enabling non-blocking,
+                    asynchronous operations in the language. It allows JavaScript to perform tasks like handling events,
+                    executing callbacks, and processing asynchronous operations without blocking the main thread.
+                </p>
+                <h2 class="font-bold text-2xl my-4">How It Works</h2>
+                <ol class="list-decimal ml-10 mb-4">
+                    <li><b>Call Stack:</b> The call stack keeps track of function calls. When a function is invoked, it is added to the call stack. Once it finishes executing, it is removed from the stack.</li>
+                    <li><b>Web APIs:</b> JavaScript runtime environments like browsers or Node.js provide Web APIs (e.g., setTimeout, fetch). These APIs handle tasks like timers and network requests asynchronously.</li>
+                    <li><b>Callback Queue (Task Queue):</b> When Web APIs complete their tasks, they push callbacks (functions to be executed) into the callback queue.</li>
+                    <li><b>Event Loop:</b> The event loop continuously checks the call stack and the callback queue. If the call stack is empty, it takes the first callback from the callback queue and pushes it onto the call stack for execution.</li>
+                </ol>
+                <pre class="bg-[#0b0b0b] rounded-lg my-4 overflow-x-auto">
+                    <code>
+                        <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-green-300">'Start'</span>);
+                        
+                        <span class="text-purple-400">setTimeout</span>(<span class="text-purple-300">() =&gt;</span> {
+                            <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-green-300">'Timeout callback'</span>);
+                        }, <span class="text-purple-300">2000</span>); <span class="text-[#404040]">// Executes after 2 seconds</span>
+                        
+                        <span class="text-blue-300">console</span>.<span class="text-blue-300">log</span>(<span class="text-green-300">'End'</span>);
+                    </code>
+                </pre>                
+            </article>
+        </section>
+    </main>
+    <footer class="bg-white text-[#0b0b0b] text-center p-24 ">
+        <div>
+            <p>© 2024 By <strong>Daniel Andres Olivares Rodelo</strong> ... All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
